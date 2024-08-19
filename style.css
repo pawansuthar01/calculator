@@ -4,6 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 20px;
   background-color: #cbd4c2;
 }
 .calculator {
