@@ -18,35 +18,45 @@ body {
 .input {
   display: flex;
   padding-right: 10px;
+  justify-content: center;
   flex-direction: column;
-  margin-bottom: 10px;
+  height: 100px;
 }
-input {
+.hidden {
+  display: none;
+}
+.active {
+  animation: up 0.1s ease forwards;
+}
+@keyframes up {
+  100% {
+    transform: translateY(-20px);
+  }
+  0% {
+    transform: translateY(0);
+  }
+}
+#display {
   height: 40px;
-  width: 100%;
-  border: none;
+  /* display: flex; */
+
+  margin: 0;
+  align-items: center;
   font-size: 30px;
   align-items: center;
   color: black;
   font-weight: 300;
-  padding-left: 10px;
 }
-input:first-child {
-  border-radius: 20px 20px 0 0;
-}
-input:last-child {
-  border-radius: 0px 0px 20px 20px;
-}
-.display {
-  width: 160px;
+#display2 {
   height: 40px;
-  margin-bottom: 10px;
-  text-align: right;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 18px;
+  margin: 0;
+  font-size: 30px;
+  align-items: center;
+  color: black;
+  font-weight: 300;
+  line-height: 0;
 }
+
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 80px);
