@@ -19,7 +19,11 @@ body {
   display: flex;
   padding-right: 10px;
   justify-content: center;
+  width: 350px;
   flex-direction: column;
+  scrollbar-width: none;
+  overflow-x: scroll;
+  scrollbar-width: 0px;
   height: 100px;
 }
 .hidden {
