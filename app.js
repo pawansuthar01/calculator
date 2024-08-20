@@ -1,21 +1,26 @@
 let display = document.getElementById("display");
 let display2 = document.getElementById("display2");
 let currvalue = "";
+let countnumber = 0;
 let block = true;
 let count = 0;
 display.value = "";
 display2.value = "";
 
 function appendnum(number) {
-  currvalue += number;
-  display.innerText = currvalue;
-  block = true;
-  count = 1;
+  if (countnumber !== 16) {
+    countnumber++;
+    currvalue += number;
+    display.innerText = currvalue;
+    block = true;
+    count = 1;
+  }
 }
 
 function appendop(op) {
   if (block && currvalue !== "") {
     block = false;
+    countnumber = 0;
     count = 0;
     currvalue += "" + op + "";
     display.innerText = currvalue;
@@ -52,9 +57,11 @@ function cler() {
   display.innerText = newc;
   currvalue = newc;
   count = 0;
+  countnumber--;
 }
 function clerall() {
   display.innerText = "";
+  countnumber = 0;
   currvalue = "";
   display.classList.remove("active");
   display2.classList.add("hidden");
