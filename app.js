@@ -1,15 +1,19 @@
 let display = document.getElementById("display");
 let display2 = document.getElementById("display2");
+
 let currvalue = "";
 let countnumber = 0;
 let block = true;
+let operter = true;
 let count = 0;
+
 display.value = "";
 display2.value = "";
 
 function appendnum(number) {
   if (countnumber !== 16) {
     countnumber++;
+
     currvalue += number;
     display.innerText = currvalue;
     block = true;
@@ -22,15 +26,17 @@ function appendop(op) {
     block = false;
     countnumber = 0;
     count = 0;
+
     currvalue += "" + op + "";
     display.innerText = currvalue;
   }
 }
 function calculator() {
-  if (count !== 0) {
+  if (count != 0) {
     try {
       let result = eval(currvalue);
       display2.innerText = result;
+
       display.classList.add("active");
       display2.classList.remove("hidden");
     } catch (error) {
@@ -39,7 +45,7 @@ function calculator() {
       display2.classList.remove("hidden");
     }
   } else {
-    if (currvalue != 0) {
+    if (currvalue != "") {
       try {
         let arr = display.innerText;
         let newotal = arr.substring(0, arr.length - 1);
@@ -56,12 +62,12 @@ function cler() {
   let newc = currvalue.substring(0, currvalue.length - 1);
   display.innerText = newc;
   currvalue = newc;
-  count = 0;
+
   countnumber--;
 }
 function clerall() {
   display.innerText = "";
-  countnumber = 0;
+
   currvalue = "";
   display.classList.remove("active");
   display2.classList.add("hidden");
