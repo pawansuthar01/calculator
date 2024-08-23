@@ -14,17 +14,18 @@ body {
   padding: 10px;
 
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(144, 108, 108, 0.1);
 }
 section {
   padding: 10px;
   border-radius: 10px;
-  background-color: rgb(24, 23, 23);
+  background-color: rgb(15, 13, 13);
 }
 .input {
+  width: 380px;
+
   display: flex;
   padding-right: 10px;
-  /* padding: 10px; */
   margin-bottom: 10px;
   border-radius: 10px;
   justify-content: center;
@@ -40,9 +41,7 @@ section {
 .hidden {
   display: none;
 }
-.active {
-  animation: up 0.5s ease forwards;
-}
+
 @keyframes up {
   100% {
     transform: translateY(-10px);
@@ -53,33 +52,39 @@ section {
 }
 @keyframes sce {
   100% {
-    transform: scale(1.3);
+    font-size: 40px;
   }
   0% {
-    transform: scale(1);
+    font-size: 32px;
   }
 }
 #display {
-  /* display: flex; */
+  width: 350px;
   padding-left: 4px;
+
   margin: 0;
   align-items: center;
   font-size: 30px;
-  align-items: center;
 
-  font-weight: 300;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-weight: 500;
 }
 #display2 {
+  width: 350px;
   margin: 0;
-  padding-left: 45px;
+  color: black;
+  font-weight: 500;
+  padding-left: 4px;
   font-size: 30px;
   align-items: center;
 
-  font-weight: 300;
-  animation: sce 0.5s ease forwards;
-  /* animation-delay: 0.2s; */
+  border: none;
+  background-color: transparent;
 
-  /* line-height: 0; */
+  animation: up 0.5s ease forwards, sce 0.5s ease forwards;
 }
 
 .buttons {
@@ -93,15 +98,17 @@ section {
   font-size: 25px;
   border: none;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #e6e7eb;
   color: black;
   overflow: hidden;
-  box-shadow: 0px 0px 10px 1px #fff;
+
   cursor: pointer;
   text-transform: capitalize;
   font-weight: 300;
 }
-.button {
+.calculat {
+  background-color: #ff661a;
+  color: black;
   padding: 20px;
   font-weight: 500;
   overflow: hidden;
@@ -109,14 +116,19 @@ section {
   font-size: 25px;
   border: none;
   border-radius: 100%;
-  background-color: #b5c0ae;
-  box-shadow: 0 0 5px 2px #bac2c1;
   color: black;
+}
+.button {
+  background-color: #a28e85;
+
+  color: black;
+  padding: 20px;
+  font-weight: 500;
+  overflow: hidden;
+  text-transform: capitalize;
+  font-size: 25px;
+  border: none;
+  border-radius: 100%;
+
   cursor: pointer;
-}
-.button:hover {
-  background-color: #fff;
-}
-.number:hover {
-  background-color: #ffffff6a;
 }

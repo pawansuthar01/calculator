@@ -15,7 +15,7 @@ function appendnum(number) {
     countnumber++;
 
     currvalue += number;
-    display.innerText = currvalue;
+    display.value = currvalue;
     block = true;
     count = 1;
   }
@@ -28,49 +28,48 @@ function appendop(op) {
     count = 0;
 
     currvalue += "" + op + "";
-    display.innerText = currvalue;
+    display.value = currvalue;
   }
 }
 function calculator() {
   if (count != 0) {
     try {
       let result = eval(currvalue);
-      display2.innerText = result;
+      display2.value = result;
 
-      display.classList.add("active");
       display2.classList.remove("hidden");
     } catch (error) {
-      display2.innerText = error;
-      display.classList.add("active");
+      display2.value = error;
+
       display2.classList.remove("hidden");
     }
   } else {
     if (currvalue != "") {
       try {
-        let arr = display.innerText;
+        let arr = display.value;
         let newotal = arr.substring(0, arr.length - 1);
-        display2.innerText = eval(newotal);
-        display.classList.add("active");
+        display2.value = eval(newotal);
+
         display2.classList.remove("hidden");
       } catch (error) {
-        display2.innerText = error;
+        display2.value = error;
       }
     }
   }
 }
 function cler() {
   let newc = currvalue.substring(0, currvalue.length - 1);
-  display.innerText = newc;
+  display.value = newc;
   currvalue = newc;
 
   countnumber--;
 }
 function clerall() {
-  display.innerText = "";
-
+  display.value = "";
+  countnumber = 0;
   currvalue = "";
-  display.classList.remove("active");
+
   display2.classList.add("hidden");
-  display2.innerText = "";
+  display2.value = "";
   count = 0;
 }
